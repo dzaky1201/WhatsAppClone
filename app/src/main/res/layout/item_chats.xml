@@ -17,6 +17,7 @@
     <TextView
         android:id="@+id/txt_chats"
         style="@style/TitleNameText"
+        android:layout_marginLeft="@dimen/dp8"
         app:layout_constraintBottom_toBottomOf="@+id/img_chats"
         app:layout_constraintStart_toEndOf="@+id/img_chats"
         app:layout_constraintTop_toTopOf="@+id/img_chats" />

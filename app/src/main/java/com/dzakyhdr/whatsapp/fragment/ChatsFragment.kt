@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dzakyhdr.whatsapp.R
+import com.dzakyhdr.whatsapp.activity.ConversationActivity
 import com.dzakyhdr.whatsapp.adapter.ChatsAdapter
 import com.dzakyhdr.whatsapp.listener.ChatClickListener
 import com.dzakyhdr.whatsapp.listener.FailureCallback
@@ -137,13 +138,22 @@ class ChatsFragment : Fragment(), ChatClickListener {
     }
 
     override fun onChatClicked(
-        name: String?,
+        chatId: String?,
         otherUserId: String?,
         chatsImageUrl: String?,
         chatsName: String?
     ) {
-        Toast.makeText(context, "$name, clicked", Toast.LENGTH_SHORT).show()
+        startActivity(
+            ConversationActivity.newIntent(
+                context,
+                chatId,
+                chatsImageUrl,
+                otherUserId,
+                chatsName
+            )
+        )
     }
+
 
 
 
